@@ -24,8 +24,13 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-// Databse setup
-mongoose.connect("mongodb://localhost/yelp_camp");
+// Database setup
+//mongoose.connect("mongodb://localhost/yelp_camp");
+
+/*
+    I understand that generally this shouldn't be public knowledge, however this is just a private project for demonstration purposes, so I'm fine with sharing this information.
+*/
+mongoose.connect("mongodb://dbuser:dbpass@ds049754.mlab.com:49754/yelp_camp");
 
 // Authentication setup
 app.use(require('express-session')({
