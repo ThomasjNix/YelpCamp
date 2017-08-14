@@ -6,7 +6,6 @@ var express = require('express'),
     mongoose = require('mongoose'),
     Campground = require('./models/campground'),
     Comment = require('./models/comment'),
-    seedDB = require('./seeds'),
     passport = require('passport'),
     LocalStrategy = require('passport-local'),
     passportLocalMongoose = require('passport-local-mongoose'),
@@ -24,13 +23,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-// Database setup
-//mongoose.connect("mongodb://localhost/yelp_camp");
-
-/*
-    I understand that generally this shouldn't be public knowledge, however this is just a private project for demonstration purposes, so I'm fine with sharing this information.
-*/
-mongoose.connect("mongodb://dbuser:dbpass@ds049754.mlab.com:49754/yelp_camp");
+// Databse setup
+mongoose.connect(process.env.DATABASEURL);
 
 // Authentication setup
 app.use(require('express-session')({
