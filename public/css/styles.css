@@ -1,0 +1,30 @@
+
+
+#landing_container_div{
+    text-align: center;
+}
+
+.thumbnail img{
+    width: 100%;
+}
+
+.thumbnail{
+    padding: 0;
+}
+.thumbnail.show{
+    padding: 10px;
+}
+.thumbnail > h4{
+    text-align: center;
+}
+.h4-bold{
+    font-weight: bold;
+}
+
+.thumbnail.caption-full{
+    padding: 9px;
+}
+
+.delete-form{
+    display: inline;
+}
